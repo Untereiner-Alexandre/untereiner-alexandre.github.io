@@ -1,0 +1,89 @@
+/*
+  ==========================================
+  1. Base & Réinitialisation (Minimal)
+  ==========================================
+*/
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main
+{
+    max-width: 1024px;
+    margin: auto;
+    padding: 2em;
+    width: calc(100% - 4em);
+}
+
+:root 
+{
+    /* Fond de base & Surface */
+    --bg-color-root: #ffffff;
+    --bg-page: #f8fafc;
+
+    /* Couleurs de texte */
+    --text-main: #111827;    /* Plus profond pour la lisibilité */
+    --text-muted: #4b5563;
+
+    /* Accentuation (Indigo moderne) */
+    --accent: #4f46e5;
+    --accent-soft: rgba(79, 70, 229, 0.1);
+
+    /* Glassmorphism & Composants */
+    --header-bg: rgba(255, 255, 255, 0.75);
+    --header-border: rgba(0, 0, 0, 0.08);
+    --menu-bg: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.5);
+    --glass-border: rgba(0, 0, 0, 0.05);
+
+    /* Code & Data */
+    --code-bg: #f1f5f9;
+    --code-text: #334155;
+
+}
+
+html.dark 
+{
+    /* Fond de base & Surface (Noir OLED très léger) */
+    --bg-color-root: #050505; 
+    --bg-page: #0a0a0c;
+
+    /* Couleurs de texte */
+    --text-main: #f9fafb;
+    --text-muted: #9ca3af;
+
+    /* Accentuation (Violet-bleu plus lumineux pour le contraste) */
+    --accent: #818cf8;
+    --accent-soft: rgba(129, 140, 248, 0.15);
+
+    /* Glassmorphism & Composants */
+    --header-bg: rgba(10, 10, 12, 0.85); /* Plus opaque pour le flou */
+    --header-border: rgba(255, 255, 255, 0.1);
+    --menu-bg: #0a0a0c;
+    --glass-bg: rgba(255, 255, 255, 0.03); /* Très léger en dark */
+    --glass-border: rgba(255, 255, 255, 0.08);
+
+    /* Code & Data */
+    --code-bg: #111113;
+    --code-text: #e2e8f0;
+}
+
+/* Bloque les transitions tant que la page n'est pas chargée */
+html:not(.ready) *, html:not(.ready) *::before, html:not(.ready) *::after 
+{
+    transition: none !important;
+    animation: none !important;
+}
+
+img
+{
+    width: 100%;
+}

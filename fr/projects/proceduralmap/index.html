@@ -1,0 +1,334 @@
+<!DOCTYPE html><html lang="fr"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width"><title>Map procédurale</title><link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.QW52Ox2j.js"></script><script>
+            function applyTheme() {
+                const theme = (() => {
+                    if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+                        return localStorage.getItem('theme');
+                    }
+                    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                })();
+                document.documentElement.classList.toggle('dark', theme === 'dark');
+            }
+            applyTheme();
+
+            // Gestion Astro View Transitions
+            document.addEventListener('astro:after-swap', applyTheme);
+        </script><script>
+        document.addEventListener('astro:page-load', () => {
+            const videos = document.querySelectorAll('video');
+            videos.forEach(video => {
+            video.load(); // Force le navigateur à re-scanner les sources de la vidéo
+            });
+        });
+        </script><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;e2efb6a00e804528bebe12f77fdd9de4&quot;}"></script><link rel="stylesheet" href="/styles/global.css"><style>#bg-fixed-container[data-astro-cid-rupa6kxd]{position:fixed;inset:0;z-index:-1;background-color:var(--bg-color-root);transition:background-color .5s ease-in-out;pointer-events:none}.preload #bg-fixed-container[data-astro-cid-rupa6kxd]{transition:none!important}.blob[data-astro-cid-rupa6kxd]{position:absolute;width:var(--size);height:var(--size);background:var(--color);top:var(--y);left:var(--x);opacity:var(--globalOpacity);border-radius:40% 60% 70% 30%/40% 50% 60%;will-change:transform;animation:move-organic var(--duration) infinite alternate ease-in-out;transition:none}.ready .blob[data-astro-cid-rupa6kxd]{transition:opacity .5s ease}.dark .blob[data-astro-cid-rupa6kxd]{opacity:calc(var(--globalOpacity) * 1.5);mix-blend-mode:screen}.blob-wrapper[data-astro-cid-rupa6kxd]{width:100%;height:100%;filter:blur(var(--blur))}@keyframes move-organic{0%{transform:translate(0) rotate(0) scale(1)}50%{transform:translate(10vw,15vh) rotate(180deg) scale(1.2);border-radius:60% 40% 30% 70%/50% 30% 70% 50%}to{transform:translate(-5vw,-10vh) rotate(360deg) scale(.9)}}._wrapper_1yv6s_1{position:relative;width:var(--w-closed);height:var(--h-closed);z-index:100;box-sizing:border-box}._container_1yv6s_9{position:absolute;top:0;left:0;width:100%;height:100%;background-color:#000;border-radius:20px;border:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;overflow:hidden;transition:height .4s cubic-bezier(.4,0,.2,1),background-color .3s ease,border-radius .3s ease;box-sizing:border-box}._isExpanded_1yv6s_27{height:var(--h-open)!important;background-color:#fff;border-radius:12px;border-color:#0000001a}._trigger_1yv6s_34{height:var(--h-closed);min-height:var(--h-closed);width:100%;display:flex;align-items:center;justify-content:center;padding:0 12px;cursor:pointer;color:#fff;background:transparent;border:none;flex-shrink:0;transition:color .3s;box-sizing:border-box}._isExpanded_1yv6s_27 ._trigger_1yv6s_34{color:#000;border-bottom:1px solid #eee}._triggerLabel_1yv6s_57{font-weight:600;font-size:13px;white-space:nowrap}._chevron_1yv6s_63{margin-left:8px;transition:transform .3s ease}._rotate_1yv6s_68{transform:rotate(180deg)}._content_1yv6s_71{flex:1;display:flex;flex-direction:column;opacity:0;visibility:hidden;overflow:hidden}._isExpanded_1yv6s_27 ._content_1yv6s_71{opacity:1;visibility:visible;transition:opacity .2s ease .2s}._searchBar_1yv6s_86{padding:8px;width:100%;box-sizing:border-box}._searchBar_1yv6s_86 input{width:100%;box-sizing:border-box;padding:6px 10px;border-radius:6px;border:1px solid #ddd;background:#f9f9f9;outline:none}._scrollList_1yv6s_102{flex:1;overflow-y:auto;padding:4px}._item_1yv6s_108{width:100%;display:flex;align-items:center;gap:10px;padding:4px 12px;margin-top:4px;border-radius:6px;text-decoration:none;color:#333!important;font-size:13px;box-sizing:border-box;background:transparent;border:none;cursor:pointer;transition:background-color .3s ease}._item_1yv6s_108:hover{background-color:#e4ffdc}._active_1yv6s_129{background-color:#eee;font-weight:600}._itemIcon_1yv6s_130{font-size:1.1rem}#ai-widget .ai-widget-expander{position:relative;background-color:#fffc;backdrop-filter:blur(5px);width:170px;height:48px;border-radius:24px;overflow:hidden;box-shadow:0 12px 40px #0000004d;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid rgba(0,0,0,.1);transition:width .5s cubic-bezier(.4,0,.2,1),height .5s cubic-bezier(.4,0,.2,1),border-radius .5s ease;z-index:1}#ai-widget .ai-widget-expander:before{content:"";position:absolute;inset:0;background-color:#000;background-image:linear-gradient(135deg,#000,#222);opacity:1;transition:opacity .5s ease;z-index:-1}#ai-widget .ai-widget-expander.is-expanded{width:360px;height:550px;border-radius:20px}#ai-widget .ai-widget-expander.is-expanded:before{opacity:0}#ai-widget .chat-content-internal{position:relative;z-index:2;display:flex;flex-direction:column;height:calc(100% - 48px);opacity:0;visibility:hidden;transition:opacity .3s ease}#ai-widget .is-expanded .chat-content-internal{opacity:1;visibility:visible;transition-delay:.25s}#ai-widget .chat-header{padding:16px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #f0f0f0;color:#000}#ai-widget #ai-chat{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px}#ai-widget .bot-msg,#ai-widget .user-msg-container{display:flex;width:100%;white-space:pre-wrap}#ai-widget .user-msg-container{justify-content:flex-end}#ai-widget .bot-msg span,#ai-widget .user-msg-container span{padding:10px 14px;border-radius:14px;font-size:14px;line-height:1.5;max-width:85%;word-wrap:break-word;white-space:pre-wrap}#ai-widget .bot-msg span{background:#e4ffdc;color:#111;border-bottom-left-radius:2px}#ai-widget .user-msg-container span{background:#f3f4f6;color:#111;border-bottom-right-radius:2px}#ai-widget .chat-input-area{padding:12px;display:flex;gap:8px;border-top:1px solid #f0f0f0}#ai-widget #user-input{flex:1;border:1px solid #e0e0e0;padding:10px 16px;border-radius:20px;font-size:14px;outline:none}#ai-widget #send-btn{background:#000;color:#fff;border:none;width:38px;height:38px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center}#ai-widget .bot-trigger{height:48px;display:flex;align-items:center;justify-content:center;cursor:pointer;color:#fff;user-select:none;transition:background .5s ease,color .5s ease}#ai-widget .is-expanded .bot-trigger{background:#f9f9f9;color:#000;border-top:1px solid #eee}#ai-widget .trigger-content{display:flex;align-items:center;gap:10px}#ai-widget .trigger-text{font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.5px}#ai-widget .trigger-icon{transition:transform .4s ease;display:flex}#ai-widget .bot-trigger.is-open #toggle-arrow{transform:rotate(180deg)}#ai-widget .icon-btn{background:none;border:none;cursor:pointer;color:#ccc}#ai-widget .bot-status{display:flex;align-items:center;gap:8px;font-weight:700;font-size:12px}#ai-widget .status-dot{width:8px;height:8px;background:#10b981;border-radius:50%}#ai-widget .bot-trigger{position:relative;z-index:5;margin:1px;border-radius:inherit}#ai-widget .bot-trigger:before{content:"";position:absolute;inset:0;padding:2px;border-radius:inherit;background:linear-gradient(90deg,#ff0080,#7928ca,#4299e1,#48bb78,#ff0080);background-size:400% 100%;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:flowColors 8s linear infinite;pointer-events:none}@keyframes flowColors{0%{background-position:0% 50%}to{background-position:400% 50%}}#ai-widget .is-expanded .bot-trigger:before{opacity:.5;animation-duration:6s}.dark #ai-widget .ai-widget-expander{background-color:#141416e6!important;border-color:#ffffff1a!important;box-shadow:0 12px 50px #0009!important}.dark #ai-widget .chat-header{background:#111!important;border-bottom-color:#ffffff1a!important;color:#fff!important}.dark #ai-widget .bot-status{color:#fff!important}.dark #ai-widget .bot-msg span{background:#1e291b!important;color:#d1fae5!important;border:1px solid rgba(16,185,129,.2)!important}.dark #ai-widget .user-msg-container span{background:#111!important;color:#f3f4f6!important}.dark #ai-widget .chat-input-area{border-top-color:#ffffff1a!important;background:#0000004d!important}.dark #ai-widget #user-input{background:#000!important;border-color:#333!important;color:#fff!important}.dark #ai-widget #send-btn{background:#fff!important;color:#000!important}.dark #ai-widget .is-expanded .bot-trigger{background:#111!important;color:#fff!important;border-top-color:#222!important}.dark #ai-widget .ai-widget-expander:before{background-image:linear-gradient(135deg,#000,#111)!important}.bot-msg[data-astro-cid-d4nkbc5u] span[data-astro-cid-d4nkbc5u],.user-msg-container[data-astro-cid-d4nkbc5u] span[data-astro-cid-d4nkbc5u]{white-space:pre-wrap;word-break:break-word}.astro-route-announcer{position:absolute;left:0;top:0;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden;white-space:nowrap;width:1px;height:1px}._container_167hi_18{max-width:1152px;margin:0 auto;display:flex;justify-content:flex-end;align-items:center;padding:.75rem 1.25rem;height:4rem}._logo_167hi_28{font-size:1.4rem;font-weight:800;color:var(--accent);text-decoration:none;letter-spacing:-.02em}._logoIcon_167hi_36{display:inline-block;width:40px;height:40px;background-color:var(--accent);-webkit-mask-image:url(/assets/img/favicon.svg);mask-image:url(/assets/img/favicon.svg);transition:background-color .5s ease}._logoIcon_167hi_36:hover{background-color:var(--text-main);transform:scale(1.05)}._desktopNav_167hi_60{display:none;align-items:center}@media(min-width:768px){._desktopNav_167hi_60{display:flex;gap:2rem}}._navLink_167hi_69{font-size:.9rem;font-weight:500;color:var(--text-main);text-decoration:none;padding:.5rem .8rem;border-radius:.6rem;transition:all .2s ease}._navLink_167hi_69:hover,._activeLink_167hi_79{color:var(--accent);background:var(--accent-soft)}._header_167hi_2{position:sticky;top:0;z-index:100;width:100%;background-color:var(--header-bg)!important;backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);border-bottom:1px solid var(--header-border);transition:none}.ready ._header_167hi_2{transition:background-color .5s ease,border-color .5s ease}._container_167hi_18{max-width:1152px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:.75rem 1.25rem;height:4rem}._logo_167hi_28{font-size:1.4rem;font-weight:800;color:var(--accent);text-decoration:none;letter-spacing:-.02em;z-index:101}._desktopNav_167hi_60{display:none;align-items:center;gap:2rem}@media(min-width:768px){._desktopNav_167hi_60{display:flex}}._linksGroup_167hi_144{display:flex;gap:.5rem}._navLink_167hi_69{font-size:.9rem;font-weight:500;color:var(--text-main);text-decoration:none;padding:.5rem .8rem;border-radius:.6rem;transition:all .2s ease;opacity:.9}._navLink_167hi_69:hover,._activeLink_167hi_79{opacity:1;color:var(--accent);background:var(--accent-soft)}._actions_167hi_84{display:flex;align-items:center;gap:1rem;padding-left:1.5rem;border-left:1px solid var(--header-border)}._mobileToggle_167hi_175{display:flex;align-items:center;justify-content:center;padding:.6rem;background:var(--accent-soft);border:1px solid var(--header-border);border-radius:.8rem;color:var(--text-main);cursor:pointer;z-index:101}@media(min-width:768px){._mobileToggle_167hi_175,._mobileMenu_167hi_189{display:none!important}}._mobileMenu_167hi_189{position:absolute;top:100%;left:0;width:100%;background-color:var(--menu-bg);border-bottom:1px solid var(--header-border);opacity:0;visibility:hidden;transform:translateY(-10px);transition:opacity .3s ease,transform .3s ease;pointer-events:none;z-index:99}._mobileMenu_167hi_189._open_167hi_212{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto}._mobileContent_167hi_219{padding:1.5rem;display:flex;flex-direction:column;gap:1.2rem}._mobileLink_167hi_226{font-size:1.1rem;font-weight:600;color:var(--text-main);text-decoration:none;padding:.5rem 0}._mobileActions_167hi_234{display:flex;align-items:center;justify-content:space-between;padding-top:1rem;border-top:1px solid var(--header-border)}._divider_167hi_242{border:0;border-top:1px solid var(--header-border);margin:.5rem 0;opacity:.5}.themeToggle[data-astro-cid-oemx5le4]{background:#7d7d7d1a;border:1px solid rgba(125,125,125,.2);cursor:pointer;width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#4b5563;transition:all .3s cubic-bezier(.4,0,.2,1);position:relative;overflow:hidden}.themeToggle[data-astro-cid-oemx5le4]:hover{background:#7d7d7d33;transform:scale(1.05)}svg[data-astro-cid-oemx5le4]{position:absolute;opacity:0;pointer-events:none}.themeToggle[data-astro-cid-oemx5le4].ready svg[data-astro-cid-oemx5le4]{transition:transform .5s ease,opacity .3s ease}.sun[data-astro-cid-oemx5le4]{opacity:1;transform:translateY(0) rotate(0)}.moon[data-astro-cid-oemx5le4]{opacity:0;transform:translateY(20px) rotate(45deg)}.dark .themeToggle[data-astro-cid-oemx5le4]{color:#fbbf24;background:#fbbf241a;border-color:#fbbf2433}.dark .sun[data-astro-cid-oemx5le4]{opacity:0;transform:translateY(-20px) rotate(-45deg)}.dark .moon[data-astro-cid-oemx5le4]{opacity:1;transform:translateY(0) rotate(0)}._footer_1v6ma_2{width:100%;background-color:var(--header-bg);backdrop-filter:blur(12px) saturate(160%);-webkit-backdrop-filter:blur(12px) saturate(160%);border-top:1px solid var(--header-border);transition:none}.ready ._footer_1v6ma_2{transition:background-color .5s ease,border-color .5s ease}._container_1v6ma_16{max-width:1152px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:1.5rem 1.25rem}._linksGroup_1v6ma_26{display:flex;gap:.5rem}._navLink_1v6ma_31{font-size:.9rem;font-weight:500;color:var(--text-muted);text-decoration:none;padding:.5rem .8rem;border-radius:.6rem;transition:all .2s ease}._navLink_1v6ma_31:hover,._activeLink_1v6ma_41{color:var(--accent);background:var(--accent-soft)}._actions_1v6ma_47{display:flex;align-items:center;gap:1.5rem}._socialIcon_1v6ma_53{color:var(--text-muted);display:flex;align-items:center;justify-content:center;padding:.5rem;border-radius:.5rem;transition:all .2s ease;background:var(--accent-soft)}._socialIcon_1v6ma_53:hover{color:var(--accent);transform:translateY(-2px);background:var(--accent-soft)}._dividerVertical_1v6ma_70{width:1px;height:24px;background-color:var(--header-border)}._logoSection_1v6ma_77{display:flex;flex-direction:column;align-items:flex-end}._logo_1v6ma_77{font-size:1rem;font-weight:800;color:var(--accent)}._copyright_1v6ma_89{font-size:.7rem;font-weight:600;color:var(--text-muted);text-transform:uppercase;opacity:.8}@media(max-width:768px){._container_1v6ma_16{flex-direction:column;gap:2rem;text-align:center}._logoSection_1v6ma_77{align-items:center}._dividerVertical_1v6ma_70{display:none}}._contactSection_3n68q_2{padding-top:1rem;width:100%}._grid_3n68q_7{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;max-width:1152px;margin:0 auto}._card_3n68q_15{display:flex;align-items:center;padding:.75rem 1rem;background:var(--glass-bg, rgba(255, 255, 255, .7));border:1px solid var(--glass-border, rgba(0, 0, 0, .1));border-radius:12px;text-decoration:none;transition:all .3s ease}.dark ._card_3n68q_15{background:#0a0a0ccc;border-color:#ffffff1a}._card_3n68q_15:hover{transform:translateY(-3px);border-color:var(--accent, #4f46e5);background:#ffffffe6}.dark ._card_3n68q_15:hover{background:#ffffff14}._minimalSection_3n68q_43{padding:1rem 0}._flexRow_3n68q_47{display:flex;justify-content:center;gap:1.25rem;flex-wrap:wrap}._iconBtn_3n68q_54{display:flex;align-items:center;justify-content:center;text-decoration:none;transition:transform .2s ease}._iconBtn_3n68q_54:hover{transform:scale(1.15)}._iconWrapper_3n68q_67{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;background:#0000000d;color:#4b5563;transition:all .3s ease}.dark ._iconWrapper_3n68q_67{background:#ffffff0d;color:#9ca3af}._card_3n68q_15 ._iconWrapper_3n68q_67{margin-right:.75rem}._card_3n68q_15:hover ._iconWrapper_3n68q_67,._iconBtn_3n68q_54:hover ._iconWrapper_3n68q_67{background:var(--hover-color);color:#fff}._info_3n68q_95{display:flex;flex-direction:column;overflow:hidden}._label_3n68q_101{font-size:.65rem;font-weight:700;color:#6b7280;text-transform:uppercase;letter-spacing:.05em}.dark ._label_3n68q_101{color:#9ca3af}._username_3n68q_113{font-size:.85rem;font-weight:600;color:#1f2937;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.dark ._username_3n68q_113{color:#f3f4f6}._arrow_3n68q_126{margin-left:auto;font-size:.9rem;opacity:0;transition:.3s;color:var(--accent, #4f46e5)}._card_3n68q_15:hover ._arrow_3n68q_126{opacity:1;transform:translate(3px)}@media(max-width:768px){._grid_3n68q_7{grid-template-columns:repeat(2,1fr)}}@media(max-width:480px){._grid_3n68q_7{grid-template-columns:1fr;padding:0 1rem}}html{background-color:var(--bg-color-root);color:var(--text-main)}html.ready{transition:background-color .5s ease-in-out,color .5s ease-in-out}body{margin:0;background-color:transparent!important}.loading-bar{position:fixed;top:0;left:0;width:0%;height:3px;background:var(--accent);z-index:9999;transition:width .4s ease,opacity .4s ease;opacity:0;pointer-events:none}.loading-bar.active{width:70%;opacity:1}html.ready .loading-bar:not(.active){width:100%;opacity:0;transition:width .3s ease,opacity .5s .2s ease}.reading-progress-container[data-astro-cid-nnczfnid]{position:fixed;top:0;left:0;width:100%;height:4px;z-index:1000;background:#ffffff0d}.progress-bar[data-astro-cid-nnczfnid]{height:100%;background:linear-gradient(90deg,var(--color1),var(--color2));width:0%;transition:width .1s ease}
+.project-detail{width:100%;color:var(--text-main);font-family:Inter,system-ui,sans-serif}.fade-in{animation:fadeInUp .8s cubic-bezier(.16,1,.3,1)}@keyframes fadeInUp{0%{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.breadcrumb{padding:2rem}.back-link{display:inline-flex;align-items:center;gap:8px;color:var(--text-muted);text-decoration:none;font-size:.9rem;font-weight:600;margin-bottom:3rem;transition:all .3s ease}.back-link:hover{color:var(--accent);transform:translate(-4px)}.project-hero-section{display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;align-items:center;margin-bottom:6rem;padding:0 2rem}.hero-image{width:100%;aspect-ratio:4/3;border-radius:32px;overflow:hidden;border:1px solid var(--glass-border);box-shadow:0 30px 60px -12px #00000040;background:#000}.hero-image img{width:100%;height:100%;object-fit:cover}.header-meta{display:flex;align-items:center;gap:1rem;margin-bottom:1rem}.order-badge{color:var(--accent);font-weight:900;font-family:monospace;font-size:1.1rem}.separator{width:40px;height:1px;background:var(--glass-border)}.date-info{font-size:.75rem;text-transform:uppercase;letter-spacing:2px;color:var(--text-muted)}h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:950;letter-spacing:-.04em;line-height:1.1;margin:.5rem 0 1.5rem;color:var(--text-main)}.tech-stack{display:flex;flex-wrap:wrap;gap:10px}.tech-badge{display:inline-flex;align-items:center;gap:8px;background:var(--glass-bg);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);padding:8px 16px;border-radius:100px;font-size:.75rem;font-weight:700;border:1px solid var(--glass-border);color:var(--text-main)}.tech-badge .dot{width:6px;height:6px;background:var(--accent);border-radius:50%;box-shadow:0 0 8px var(--accent)}.content{font-size:1.15rem;line-height:1.8;color:var(--text-muted);padding:0 2rem}.content h2,.content h3{color:var(--text-main);text-align:left;letter-spacing:-.02em}.content h2{font-size:2.5rem;margin:5rem 0 1.5rem;font-weight:850}.content p{margin-bottom:1.8rem;max-width:1200px}.content video{width:100%;border-radius:24px;margin:3rem 0;border:1px solid var(--glass-border)}.content table{width:100%;border-collapse:collapse;margin:3rem 0;background:var(--glass-bg);border-radius:16px;overflow:hidden;border:1px solid var(--glass-border)}.content th,.content td{padding:1.5rem;text-align:left;border-bottom:1px solid var(--glass-border)}.content th{background:var(--accent-soft);color:var(--text-main)}.content pre{padding:2rem;border-radius:24px;background:var(--code-bg)!important;border:1px solid var(--glass-border);margin:2rem 0}.content code:not(pre code){background:var(--accent-soft);color:var(--accent);padding:.2rem .4rem;border-radius:6px}.img-center{margin:auto;width:50%}.image-comparison{display:flex;flex-wrap:wrap;gap:20px;margin:3.5rem 0}.image-item{flex:1 1 350px;height:380px;border-radius:24px;overflow:hidden;background:var(--glass-bg);border:1px solid var(--glass-border);backdrop-filter:blur(10px);transition:all .4s ease}.image-item img{width:100%!important;height:100%!important;object-fit:cover!important}.image-item:hover{transform:translateY(-8px);border-color:var(--accent);box-shadow:0 20px 40px -10px #0000004d}.project-nav{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:10rem;padding:4rem 2rem;border-top:1px solid var(--glass-border)}.nav-button{padding:2.5rem;border-radius:30px;background:var(--glass-bg);backdrop-filter:blur(10px);border:1px solid var(--glass-border);text-decoration:none;transition:all .3s cubic-bezier(.16,1,.3,1)}.nav-button:hover{border-color:var(--accent);background:var(--accent-soft);transform:translateY(-8px)}.nav-button.next{text-align:right}.nav-button .label{color:var(--accent);font-size:.75rem;font-weight:800;text-transform:uppercase;display:block;margin-bottom:.5rem}.nav-button .title{color:var(--text-main);font-weight:800;font-size:1.3rem}.video-container{position:relative;width:100%;border-radius:24px;overflow:hidden;border:1px solid var(--glass-border);box-shadow:0 20px 40px #0000004d}.video-container iframe{aspect-ratio:16 / 9;width:100%;height:auto;display:block}@media(max-width:1000px){.project-hero-section{grid-template-columns:1fr;gap:2rem}.hero-image{aspect-ratio:16/9}}@media(max-width:768px){.project-nav{grid-template-columns:1fr}.content{text-align:left}.nav-button{padding:1.5rem}.img-center{margin:auto;width:100%}}
+</style></head> <body class="app-wrapper"> <div id="loading-bar" class="loading-bar"></div> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script><script>(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="Zs6TxF" prefix="r5" component-url="/_astro/Header.DPKaTnOa.js" component-export="Header" renderer-url="/_astro/client.9unXo8s5.js" props="{&quot;currentLang&quot;:[0,&quot;fr&quot;],&quot;title&quot;:[0,&quot;Map procédurale&quot;],&quot;links&quot;:[1,[[0,{&quot;href&quot;:[0,&quot;/fr/&quot;],&quot;label&quot;:[0,&quot;Accueil&quot;]}],[0,{&quot;href&quot;:[0,&quot;/fr/projects&quot;],&quot;label&quot;:[0,&quot;Projets&quot;]}],[0,{&quot;href&quot;:[0,&quot;/fr/art&quot;],&quot;label&quot;:[0,&quot;Art&quot;]}],[0,{&quot;href&quot;:[0,&quot;/fr/about&quot;],&quot;label&quot;:[0,&quot;À Propos&quot;]}],[0,{&quot;href&quot;:[0,&quot;/fr/contact&quot;],&quot;label&quot;:[0,&quot;Contact&quot;]}]]],&quot;currentPathname&quot;:[0,&quot;/fr/projects/proceduralmap/&quot;]}" ssr client="load" opts="{&quot;name&quot;:&quot;Header&quot;,&quot;value&quot;:true}" await-children><header class="_header_167hi_2"><div class="_container_167hi_18"><a href="/fr/" class="_logo_167hi_28"><span class="_logoIcon_167hi_36"></span></a><nav class="_desktopNav_167hi_60"><div class="_linksGroup_167hi_144"><a href="/fr/" class="_navLink_167hi_69 ">Accueil</a><a href="/fr/projects" class="_navLink_167hi_69 ">Projets</a><a href="/fr/art" class="_navLink_167hi_69 ">Art</a><a href="/fr/about" class="_navLink_167hi_69 ">À Propos</a><a href="/fr/contact" class="_navLink_167hi_69 ">Contact</a></div><div class="_actions_167hi_84"><astro-slot> <astro-island uid="ctl4w" prefix="r2" component-url="/_astro/Dropdown.UDb6J9rw.js" component-export="Dropdown" renderer-url="/_astro/client.9unXo8s5.js" props="{&quot;label&quot;:[0,&quot;🇫🇷 Français&quot;],&quot;items&quot;:[1,[[0,{&quot;label&quot;:[0,&quot;English&quot;],&quot;value&quot;:[0,&quot;en&quot;],&quot;icon&quot;:[0,&quot;🇬🇧&quot;],&quot;href&quot;:[0,&quot;/en/projects/proceduralmap/&quot;]}],[0,{&quot;label&quot;:[0,&quot;Français&quot;],&quot;value&quot;:[0,&quot;fr&quot;],&quot;icon&quot;:[0,&quot;🇫🇷&quot;],&quot;href&quot;:[0,&quot;/fr/projects/proceduralmap/&quot;]}]]],&quot;currentValue&quot;:[0,&quot;fr&quot;],&quot;width&quot;:[0,&quot;120px&quot;],&quot;height&quot;:[0,&quot;40px&quot;],&quot;heightOpen&quot;:[0,&quot;130px&quot;],&quot;showSearch&quot;:[0,false]}" ssr client="load" opts="{&quot;name&quot;:&quot;Dropdown&quot;,&quot;value&quot;:true}" await-children><div class="_wrapper_1yv6s_1" style="--w-closed:120px;--h-closed:40px;--h-open:130px"><div class="_container_1yv6s_9 "><button type="button" class="_trigger_1yv6s_34"><span class="_triggerLabel_1yv6s_57">🇫🇷 Français</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down _chevron_1yv6s_63" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button><div class="_content_1yv6s_71"><div class="_scrollList_1yv6s_102"><a href="/en/projects/proceduralmap/" class="_item_1yv6s_108 "><span class="_itemIcon_1yv6s_130">🇬🇧</span><span>English</span></a><a href="/fr/projects/proceduralmap/" class="_item_1yv6s_108 _active_1yv6s_129"><span class="_itemIcon_1yv6s_130">🇫🇷</span><span>Français</span></a></div></div></div></div><!--astro:end--></astro-island> <button class="themeToggle" aria-label="Toggle Theme" data-astro-cid-oemx5le4> <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-oemx5le4> <circle cx="12" cy="12" r="4" data-astro-cid-oemx5le4></circle> <path d="M12 2v2" data-astro-cid-oemx5le4></path><path d="M12 20v2" data-astro-cid-oemx5le4></path> <path d="m4.93 4.93 1.41 1.41" data-astro-cid-oemx5le4></path><path d="m17.66 17.66 1.41 1.41" data-astro-cid-oemx5le4></path> <path d="M2 12h2" data-astro-cid-oemx5le4></path><path d="M20 12h2" data-astro-cid-oemx5le4></path> <path d="m6.34 17.66-1.41 1.41" data-astro-cid-oemx5le4></path><path d="m19.07 4.93-1.41 1.41" data-astro-cid-oemx5le4></path> </svg> <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-oemx5le4> <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" data-astro-cid-oemx5le4></path> </svg> </button>  <script>
+  if (!window.themeEventAttached) {
+    const toggleTheme = () => {
+      const isDark = document.documentElement.classList.toggle("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    };
+
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.themeToggle');
+      if (btn) toggleTheme();
+    });
+
+    // Gestion du flash au changement de page (Astro View Transitions)
+    const initToggle = () => {
+      const btn = document.querySelector('.themeToggle');
+      if (btn) {
+        // On attend une frame pour que l'état 'dark' soit déjà appliqué sur le HTML
+        // sans que l'utilisateur ne voit l'animation de départ
+        requestAnimationFrame(() => {
+          btn.classList.add('ready');
+        });
+      }
+    };
+
+    initToggle();
+    document.addEventListener('astro:after-swap', initToggle);
+    window.themeEventAttached = true;
+  }
+</script> </astro-slot></div></nav><button class="_mobileToggle_167hi_175" aria-label="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg></button></div><div class="_mobileMenu_167hi_189 "><div class="_mobileContent_167hi_219"><a href="/fr/" class="_mobileLink_167hi_226 ">Accueil</a><a href="/fr/projects" class="_mobileLink_167hi_226 ">Projets</a><a href="/fr/art" class="_mobileLink_167hi_226 ">Art</a><a href="/fr/about" class="_mobileLink_167hi_226 ">À Propos</a><a href="/fr/contact" class="_mobileLink_167hi_226 ">Contact</a><hr class="_divider_167hi_242"/><div class="_mobileActions_167hi_234"><astro-slot> <astro-island uid="ctl4w" prefix="r2" component-url="/_astro/Dropdown.UDb6J9rw.js" component-export="Dropdown" renderer-url="/_astro/client.9unXo8s5.js" props="{&quot;label&quot;:[0,&quot;🇫🇷 Français&quot;],&quot;items&quot;:[1,[[0,{&quot;label&quot;:[0,&quot;English&quot;],&quot;value&quot;:[0,&quot;en&quot;],&quot;icon&quot;:[0,&quot;🇬🇧&quot;],&quot;href&quot;:[0,&quot;/en/projects/proceduralmap/&quot;]}],[0,{&quot;label&quot;:[0,&quot;Français&quot;],&quot;value&quot;:[0,&quot;fr&quot;],&quot;icon&quot;:[0,&quot;🇫🇷&quot;],&quot;href&quot;:[0,&quot;/fr/projects/proceduralmap/&quot;]}]]],&quot;currentValue&quot;:[0,&quot;fr&quot;],&quot;width&quot;:[0,&quot;120px&quot;],&quot;height&quot;:[0,&quot;40px&quot;],&quot;heightOpen&quot;:[0,&quot;130px&quot;],&quot;showSearch&quot;:[0,false]}" ssr client="load" opts="{&quot;name&quot;:&quot;Dropdown&quot;,&quot;value&quot;:true}" await-children><div class="_wrapper_1yv6s_1" style="--w-closed:120px;--h-closed:40px;--h-open:130px"><div class="_container_1yv6s_9 "><button type="button" class="_trigger_1yv6s_34"><span class="_triggerLabel_1yv6s_57">🇫🇷 Français</span><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down _chevron_1yv6s_63" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg></button><div class="_content_1yv6s_71"><div class="_scrollList_1yv6s_102"><a href="/en/projects/proceduralmap/" class="_item_1yv6s_108 "><span class="_itemIcon_1yv6s_130">🇬🇧</span><span>English</span></a><a href="/fr/projects/proceduralmap/" class="_item_1yv6s_108 _active_1yv6s_129"><span class="_itemIcon_1yv6s_130">🇫🇷</span><span>Français</span></a></div></div></div></div><!--astro:end--></astro-island> <button class="themeToggle" aria-label="Toggle Theme" data-astro-cid-oemx5le4> <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-oemx5le4> <circle cx="12" cy="12" r="4" data-astro-cid-oemx5le4></circle> <path d="M12 2v2" data-astro-cid-oemx5le4></path><path d="M12 20v2" data-astro-cid-oemx5le4></path> <path d="m4.93 4.93 1.41 1.41" data-astro-cid-oemx5le4></path><path d="m17.66 17.66 1.41 1.41" data-astro-cid-oemx5le4></path> <path d="M2 12h2" data-astro-cid-oemx5le4></path><path d="M20 12h2" data-astro-cid-oemx5le4></path> <path d="m6.34 17.66-1.41 1.41" data-astro-cid-oemx5le4></path><path d="m19.07 4.93-1.41 1.41" data-astro-cid-oemx5le4></path> </svg> <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-oemx5le4> <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" data-astro-cid-oemx5le4></path> </svg> </button>  <script>
+  if (!window.themeEventAttached) {
+    const toggleTheme = () => {
+      const isDark = document.documentElement.classList.toggle("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    };
+
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('.themeToggle');
+      if (btn) toggleTheme();
+    });
+
+    // Gestion du flash au changement de page (Astro View Transitions)
+    const initToggle = () => {
+      const btn = document.querySelector('.themeToggle');
+      if (btn) {
+        // On attend une frame pour que l'état 'dark' soit déjà appliqué sur le HTML
+        // sans que l'utilisateur ne voit l'animation de départ
+        requestAnimationFrame(() => {
+          btn.classList.add('ready');
+        });
+      }
+    };
+
+    initToggle();
+    document.addEventListener('astro:after-swap', initToggle);
+    window.themeEventAttached = true;
+  }
+</script> </astro-slot></div></div></div></header><!--astro:end--></astro-island> <main>  <div class="reading-progress-container" data-astro-cid-nnczfnid style="--color1: #7C3AED;--color2: #10B981;"> <div class="progress-bar" id="progress-bar" data-astro-cid-nnczfnid style="--color1: #7C3AED;--color2: #10B981;"></div> </div> <script type="module">const t=()=>{const e=document.getElementById("progress-bar");if(!e)return;const n=document.documentElement.scrollTop,o=document.documentElement.scrollHeight-document.documentElement.clientHeight,c=n/o*100;e.style.width=c+"%"};window.addEventListener("scroll",t);document.addEventListener("astro:page-load",t);</script>  <div id="bg-fixed-container" aria-hidden="true" data-astro-cid-rupa6kxd style="--globalOpacity: 0.12;"> <div class="blob-wrapper" style="--blur: 100px;; --globalOpacity: 0.12;" data-astro-cid-rupa6kxd> <div class="blob" style="
+          --color: #7C3AED; 
+          --size: 65vw; 
+          --x: -15%; 
+          --y: -10%; 
+          --duration: 38s;
+          animation-delay: -0s;
+        ; --globalOpacity: 0.12;" data-astro-cid-rupa6kxd></div><div class="blob" style="
+          --color: #10B981; 
+          --size: 50vw; 
+          --x: 60%; 
+          --y: -5%; 
+          --duration: 25s;
+          animation-delay: -3s;
+        ; --globalOpacity: 0.12;" data-astro-cid-rupa6kxd></div> </div> </div>  <div class="project-detail fade-in"> <nav class="breadcrumb"> <a href="/fr/projects" class="back-link"> <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg>  <span>Retour aux projets</span> </a> </nav> <div class="project-hero-section"> <div class="hero-image-wrapper"> <div class="hero-image"> <img src="/assets/projects/proceduralmap/ProceduralMap.png" alt="Map procédurale" loading="eager"> <div class="overlay"></div> </div> </div> <header class="project-header"> <div class="header-meta"> <span class="order-badge">#02</span> <div class="separator"></div>  <span class="date-info">Projet Réalisé</span> </div> <h1>Map procédurale</h1> <div class="tech-stack"> <span class="tech-badge"> <span class="dot"></span>C </span><span class="tech-badge"> <span class="dot"></span>SDL2 </span> </div> </header> </div> <article class="content"> <h1 id="map-procédurale">Map procédurale</h1>
+<p><strong>Année du projet : 2019-10</strong></p>
+<p>Un autre projet personnel que j’ai réalisé est un générateur de cartes procédural en 2D, développé en C avec la SDL2. Ce projet utilise une carte 2D avec un générateur de bruit personnalisé pour créer une carte unique.</p>
+<blockquote>
+<p><strong>Note :</strong> La version que je présente ici n’est pas la plus récente, car j’ai malheureusement perdu la dernière version qui incluait une correction des pôles pour un rendu sphérique amélioré.</p>
+</blockquote>
+<h2 id="1-quest-ce-que-le-générateur-procédural">1. Qu’est-ce que le Générateur Procédural ?</h2>
+<p>Le terme “génératif procédural” se réfère à la création d’éléments ou de contenus de manière algorithmique, plutôt qu’en les concevant manuellement. En utilisant des algorithmes pour générer des environnements, des niveaux ou des cartes, on peut créer des résultats variés et uniques à chaque exécution du programme.</p>
+<p>Dans le contexte des jeux vidéo et des simulations, cela permet de produire des cartes et des niveaux qui ne sont pas seulement diversifiés mais également dynamiques et adaptatifs.</p>
+<h2 id="2-carte-de-bruit-noise-map">2. Carte de Bruit (Noise Map)</h2>
+<p>Une carte de bruit est une technique utilisée pour générer des motifs aléatoires et naturels dans un espace donné. Dans ce projet, un générateur de bruit personnalisé est utilisé pour créer des cartes 2D.</p>
+<p>Cette méthode de bruit permet de produire des variations continues qui imitent des structures naturelles telles que les terrains, les océans, ou les régions montagneuses, offrant ainsi une base réaliste pour la génération de cartes procédurales.</p>
+<div class="image-comparison">
+  <div class="image-item">
+    <img src="/assets/projects/proceduralmap/noise.png" alt="Noise Map Texture">
+  </div>
+</div>
+<h2 id="3-technique-de-rendu-dune-carte-2d-en-sphère">3. Technique de Rendu d’une Carte 2D en Sphère</h2>
+<p>Pour afficher une carte 2D en projection sphérique, j’ai utilisé une technique inspirée du rendu de disque de SDL2. Cette approche consiste à prendre la carte 2D et à la mapper sur un disque en simulant une sphère.</p>
+<p>En utilisant les capacités de rendu de disque de SDL2, j’ai pu créer une illusion de profondeur et de courbure sphérique, donnant l’impression que la carte 2D est projetée sur une surface sphérique, même si en réalité, elle reste une représentation plane.</p>
+<video controls width="100%">
+  <source src="/assets/projects/proceduralmap/NoiseMap.mp4" type="video/mp4">
+  Votre navigateur ne supporte pas la balise vidéo.
+</video>
+<h2 id="4-problèmes-des-pôles-et-solution-avec-une-carte-en-cube">4. Problèmes des Pôles et Solution avec une Carte en Cube</h2>
+<p>Un problème commun avec la projection sphérique des cartes 2D est la distorsion aux pôles, où les éléments peuvent apparaître étirés ou déformés. Pour contourner ce problème, une solution consiste à utiliser une carte en cube (<strong>Cube Mapping</strong>).</p>
+<p>Cette méthode divise la surface sphérique en six faces planes qui forment un cube. Chaque face est mappée à partir de la carte 2D, permettant ainsi de réduire les distorsions aux pôles et d’obtenir un rendu plus uniforme de l’ensemble de la carte.</p>
+<div class="image-comparison">
+  <div class="image-item">
+    <img src="/assets/projects/proceduralmap/TPWKz.png" alt="Cube Map Projection">
+  </div>
+</div>
+<hr>
+<h2 id="pour-aller-plus-loin">Pour aller Plus Loin</h2>
+<p>Si vous êtes intéressé par une exploration plus approfondie des cartes de bruit et des techniques associées, voici quelques ressources et références que j’ai trouvées intéressantes lors de mes recherches récentes :</p>
+<div class="video-container">
+  <iframe width="100%" height="450" src="https://www.youtube.com/embed/gsJHzBTPG0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="video-container" style="margin-top: 2rem;">
+  <iframe width="100%" height="450" src="https://www.youtube.com/embed/eiM_AStmeGE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div> </article> <footer class="project-footer"> <nav class="project-nav"> <a href="/fr/projects/3dopengl" class="nav-button prev"> <div class="nav-content">  <span class="label">← Précédent</span> <span class="title">3D OpenGL</span> </div> </a> <a href="/fr/projects/isn" class="nav-button next"> <div class="nav-content">  <span class="label">Suivant →</span> <span class="title">ISN</span> </div> </a> </nav> </footer> </div>  </main> <div id="ai-widget" data-config="{&#34;workerUrl&#34;:&#34;https://ai.untereineralexandre-dev.workers.dev&#34;,&#34;msgStart&#34;:&#34;Bonjour ! Je suis l'assistant d'Alexandre. Comment puis-je vous aider ?&#34;,&#34;lang&#34;:&#34;Français&#34;,&#34;placeholder&#34;:&#34;Votre question...&#34;}" data-astro-cid-d4nkbc5u> <script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).only=e;window.dispatchEvent(new Event("astro:only"));})();</script><astro-island uid="1GjmnG" component-url="/_astro/Draggable.Nt9fc7sn.js" component-export="default" renderer-url="/_astro/client.9unXo8s5.js" props="{&quot;data-astro-cid-d4nkbc5u&quot;:[0,true]}" ssr client="only" opts="{&quot;name&quot;:&quot;Draggable&quot;,&quot;value&quot;:&quot;react&quot;}" await-children><template data-astro-template> <div id="widget-expander" class="ai-widget-expander" data-astro-cid-d4nkbc5u> <div class="chat-content-internal" data-astro-cid-d4nkbc5u> <header class="chat-header" data-astro-cid-d4nkbc5u> <div class="bot-status" data-astro-cid-d4nkbc5u> <div class="status-dot" data-astro-cid-d4nkbc5u></div> <span data-astro-cid-d4nkbc5u>UAI-BOT</span> </div> <button id="clear-btn" class="icon-btn" title="Effacer l'historique" data-astro-cid-d4nkbc5u> <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-d4nkbc5u> <path d="M3 6h18M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2" data-astro-cid-d4nkbc5u></path> </svg> </button> </header> <div id="ai-chat" data-astro-cid-d4nkbc5u></div> <footer class="chat-input-area" data-astro-cid-d4nkbc5u> <input type="text" id="user-input" placeholder="Votre question..." autocomplete="off" data-astro-cid-d4nkbc5u> <button id="send-btn" aria-label="Envoyer" data-astro-cid-d4nkbc5u> <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" data-astro-cid-d4nkbc5u> <line x1="22" y1="2" x2="11" y2="13" data-astro-cid-d4nkbc5u></line> <polygon points="22 2 15 22 11 13 2 9 22 2" data-astro-cid-d4nkbc5u></polygon> </svg> </button> </footer> </div> <div id="bot-toggle" class="bot-trigger" role="button" tabindex="0" data-astro-cid-d4nkbc5u> <div class="trigger-content" data-astro-cid-d4nkbc5u> <div class="trigger-text" data-astro-cid-d4nkbc5u>Assistant IA</div> <div class="trigger-icon" data-astro-cid-d4nkbc5u> <svg id="toggle-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" data-astro-cid-d4nkbc5u> <path d="m18 15-6-6-6 6" data-astro-cid-d4nkbc5u></path> </svg> </div> </div> </div> </div> </template><!--astro:end--></astro-island> </div>  <script>
+  function startAI() {
+    const root = document.getElementById('ai-widget');
+    if (!root) return;
+
+    let config = {};
+    try { config = JSON.parse(root.dataset.config); } catch (e) { return; }
+
+    const elements = {
+      chat: document.getElementById('ai-chat'),
+      input: document.getElementById('user-input'),
+      send: document.getElementById('send-btn'),
+      clear: document.getElementById('clear-btn'),
+      expander: document.getElementById('widget-expander'),
+      toggle: document.getElementById('bot-toggle')
+    };
+
+    if (!elements.toggle || !elements.chat) return;
+    
+    if (window.aiInitTimer) {
+      clearInterval(window.aiInitTimer);
+      window.aiInitTimer = null;
+    }
+
+    const HISTORY_KEY = `uai_chat_history`;
+    const STATE_KEY = 'uai_widget_expanded';
+
+    const appendMessage = (text, role) => {
+      const container = document.createElement('div');
+      container.className = role === 'user' ? 'user-msg-container' : 'bot-msg';
+      const span = document.createElement('span');
+      span.textContent = text;
+      container.appendChild(span);
+      elements.chat.appendChild(container);
+      elements.chat.scrollTop = elements.chat.scrollHeight;
+    };
+
+    let messages = localStorage.getItem(HISTORY_KEY) ? JSON.parse(localStorage.getItem(HISTORY_KEY)) : [];
+    elements.chat.innerHTML = ""; 
+    if (messages.length === 0) {
+      appendMessage(config.msgStart, 'bot');
+    } else {
+      messages.forEach(m => appendMessage(m.content, m.role));
+    }
+
+    if (localStorage.getItem(STATE_KEY) === 'true') {
+      elements.expander.classList.add('is-expanded');
+      elements.toggle.classList.add('is-open');
+    }
+
+    // --- 🟢 RETOUR DU FIX DRAG/CLICK ---
+    let startX, startY;
+    elements.toggle.onpointerdown = (e) => {
+      startX = e.clientX;
+      startY = e.clientY;
+    };
+
+    elements.toggle.onclick = (e) => {
+      e.stopPropagation();
+      const diffX = Math.abs(e.clientX - startX);
+      const diffY = Math.abs(e.clientY - startY);
+      const distance = Math.sqrt(diffX * diffX + diffY * diffY);
+
+      // On n'ouvre que si on a bougé de moins de 10px (vrai clic)
+      if (distance < 10) {
+        const isExpanded = elements.expander.classList.toggle('is-expanded');
+        elements.toggle.classList.toggle('is-open');
+        localStorage.setItem(STATE_KEY, isExpanded);
+        if (isExpanded) setTimeout(() => elements.input.focus(), 300);
+      }
+    };
+
+    // 1. Fonction unique pour afficher le chat à partir du tableau "messages"
+    const renderChat = () => {
+      elements.chat.innerHTML = "";
+      
+      // Si vide, on met juste le message de bienvenue
+      if (messages.length === 0) {
+        const container = document.createElement('div');
+        container.className = 'bot-msg';
+        const span = document.createElement('span');
+        span.textContent = config.msgStart;
+        container.appendChild(span);
+        elements.chat.appendChild(container);
+      } else {
+        // Sinon on affiche tout l'historique
+        messages.forEach(m => {
+          const container = document.createElement('div');
+          container.className = m.role === 'user' ? 'user-msg-container' : 'bot-msg';
+          const span = document.createElement('span');
+          span.textContent = m.content;
+          container.appendChild(span);
+          elements.chat.appendChild(container);
+        });
+      }
+      elements.chat.scrollTop = elements.chat.scrollHeight;
+    };
+
+    // 2. Sauvegarde et limitation
+    const saveAndCleanup = (msgs) => {
+      if (msgs.some(m => m.role === 'user')) {
+        messages = msgs.slice(-10); // On garde les 10 derniers
+        localStorage.setItem(HISTORY_KEY, JSON.stringify(messages));
+        renderChat(); // On met à jour l'affichage une seule fois ici
+      }
+    };
+
+    async function handleChat() {
+      const text = elements.input.value.trim();
+      if (!text) return;
+
+      elements.input.disabled = true;
+      elements.send.disabled = true;
+
+      // On ajoute au tableau et on laisse saveAndCleanup gérer l'affichage
+      messages.push({ role: "user", content: text });
+      saveAndCleanup(messages); 
+      
+      elements.input.value = "";
+
+      // Préparation de la bulle de réponse de l'IA (en dehors du renderChat pour le stream)
+      const botDiv = document.createElement('div');
+      botDiv.className = 'bot-msg';
+      const botSpan = document.createElement('span');
+      botSpan.textContent = "...";
+      botDiv.appendChild(botSpan);
+      elements.chat.appendChild(botDiv);
+
+      try {
+        const sections = document.querySelectorAll('header, main, footer');
+        const cleanContent = Array.from(sections).map(s => s.innerText).join(' ').replace(/\s+/g, ' ').trim();
+
+        const response = await fetch(config.workerUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ 
+            messages, 
+            pageContent: cleanContent.slice(0, 5000), 
+            userLanguage: config.lang
+          }),
+        });
+
+        const reader = response.body.getReader();
+        const decoder = new TextDecoder();
+        let assistantReply = "";
+        let buffer = "";
+
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          
+          buffer += decoder.decode(value, { stream: true });
+          const lines = buffer.split("\n");
+          buffer = lines.pop() || "";
+
+          for (const line of lines) {
+            if (!line.trim().startsWith("data: ")) continue;
+            const dataStr = line.trim().substring(6);
+            if (dataStr === "[DONE]") break;
+            try {
+              const data = JSON.parse(dataStr);
+              const content = data.response || data.choices?.[0]?.delta?.content || "";
+              if (content) {
+                assistantReply += content;
+                botSpan.textContent = assistantReply;
+                elements.chat.scrollTop = elements.chat.scrollHeight;
+              }
+            } catch (e) {}
+          }
+        }
+        // Une fois fini, on push la réponse complète et on clean (ça va render le chat final)
+        messages.push({ role: "assistant", content: assistantReply });
+        saveAndCleanup(messages);
+
+      } catch (err) {
+        botSpan.textContent = "Erreur.";
+      } finally {
+        elements.input.disabled = false;
+        elements.send.disabled = false;
+        elements.input.focus();
+      }
+    }
+
+    elements.send.onclick = handleChat;
+    elements.clear.onclick = () => {
+      localStorage.removeItem(HISTORY_KEY);
+      messages = [];
+      elements.chat.innerHTML = "";
+      appendMessage(config.msgStart, 'bot');
+    };
+    elements.input.onkeydown = (e) => { if (e.key === "Enter") handleChat(); };
+  }
+
+  function initWidget() {
+    if (window.aiInitTimer) clearInterval(window.aiInitTimer);
+    window.aiInitTimer = setInterval(startAI, 300);
+  }
+
+  initWidget();
+  document.addEventListener('astro:after-swap', initWidget);
+</script> <astro-island uid="2bUHIF" prefix="r3" component-url="/_astro/Footer.CDqQwJ-L.js" component-export="Footer" renderer-url="/_astro/client.9unXo8s5.js" props="{&quot;title&quot;:[0,&quot;Map procédurale&quot;],&quot;links&quot;:[1,[[0,{&quot;href&quot;:[0,&quot;/fr/&quot;],&quot;label&quot;:[0,&quot;Accueil&quot;]}],[0,{&quot;href&quot;:[0,&quot;/fr/projects&quot;],&quot;label&quot;:[0,&quot;Projets&quot;]}],[0,{&quot;href&quot;:[0,&quot;/fr/art&quot;],&quot;label&quot;:[0,&quot;Art&quot;]}],[0,{&quot;href&quot;:[0,&quot;/fr/about&quot;],&quot;label&quot;:[0,&quot;À Propos&quot;]}],[0,{&quot;href&quot;:[0,&quot;/fr/contact&quot;],&quot;label&quot;:[0,&quot;Contact&quot;]}]]],&quot;currentPathname&quot;:[0,&quot;/fr/projects/proceduralmap/&quot;]}" ssr client="load" opts="{&quot;name&quot;:&quot;Footer&quot;,&quot;value&quot;:true}" await-children><footer class="_footer_1v6ma_2"><section class="_contactSection_3n68q_2"><div class="_grid_3n68q_7"><a href="https://github.com/untereiner-alexandre" target="_blank" rel="noopener noreferrer" class="_card_3n68q_15"><div class="_iconWrapper_3n68q_67" style="--hover-color:#2dba4e"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg></div><div class="_info_3n68q_95"><span class="_label_3n68q_101">GitHub</span><span class="_username_3n68q_113">Untereiner-Alexandre</span></div><div class="_arrow_3n68q_126">→</div></a><a href="https://linkedin.com/in/untereiner-alexandre" target="_blank" rel="noopener noreferrer" class="_card_3n68q_15"><div class="_iconWrapper_3n68q_67" style="--hover-color:#0077b5"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg></div><div class="_info_3n68q_95"><span class="_label_3n68q_101">LinkedIn</span><span class="_username_3n68q_113">Untereiner Alexandre</span></div><div class="_arrow_3n68q_126">→</div></a><a href="mailto:UntereinerAlexandre.dev@outlook.com" target="_blank" rel="noopener noreferrer" class="_card_3n68q_15"><div class="_iconWrapper_3n68q_67" style="--hover-color:#ea4335"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg></div><div class="_info_3n68q_95"><span class="_label_3n68q_101">Email</span><span class="_username_3n68q_113">UntereinerAlexandre.dev@outlook.com</span></div><div class="_arrow_3n68q_126">→</div></a><a href="https://x.com/UntereinerAlex" target="_blank" rel="noopener noreferrer" class="_card_3n68q_15"><div class="_iconWrapper_3n68q_67" style="--hover-color:#000"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"></path></svg></div><div class="_info_3n68q_95"><span class="_label_3n68q_101">X</span><span class="_username_3n68q_113">UntereinerAlex</span></div><div class="_arrow_3n68q_126">→</div></a></div></section><div class="_container_1v6ma_16"><nav class="_linksGroup_1v6ma_26"><a href="/fr/" class="_navLink_1v6ma_31 ">Accueil</a><a href="/fr/projects" class="_navLink_1v6ma_31 ">Projets</a><a href="/fr/art" class="_navLink_1v6ma_31 ">Art</a><a href="/fr/about" class="_navLink_1v6ma_31 ">À Propos</a><a href="/fr/contact" class="_navLink_1v6ma_31 ">Contact</a></nav><div class="_actions_1v6ma_47"><div class="_dividerVertical_1v6ma_70"></div><div class="_logoSection_1v6ma_77"><span class="_copyright_1v6ma_89">© <!-- -->2026<!-- --> Alexandre Untereiner</span></div></div></div></footer><!--astro:end--></astro-island> <script type="module">const e=()=>{requestAnimationFrame(()=>{document.documentElement.classList.add("ready")})},t=document.getElementById("loading-bar");document.addEventListener("astro:before-preparation",()=>{t?.classList.add("active")});document.addEventListener("astro:after-preparation",()=>{t?.classList.remove("active")});window.addEventListener("load",e);document.addEventListener("astro:after-swap",e);</script> </body> </html>  
